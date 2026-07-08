@@ -2,25 +2,25 @@ class Jmax < Formula
   desc "Math-native language and CLI for science, data, and simulation"
   homepage "https://charlot-lang.dev"
   license "BUSL-1.1"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "6b31bc981b9dd435dbe833d8c09be28fd8bc174a10089712458883915fb1451f"
+      sha256 "10636b81372d5c137888781168f02f7b642df7d69bb57b34db6cda09c4066861"
     else
       url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "a8d67a148806946b8aa7468237d81dea3f708e3d4d74713d20333c9be6176f2c"
+      sha256 "1ab306ca9a6341c282796758d43eb0f446535bf955d80bbc21f21e2f71f67fac"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "6d3539694d7247a0008c209810a7be0b25f19431799d226584703e895bdd7976"
+      sha256 "1e46395360917a1d37d1ecdc06f333ff449d49a6dcc56fa31b90e9792eaac80e"
     else
       url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7ff6377214ec2247f568c58ec034af1babb1100fd82bdb0d56d00abc28d9f37e"
+      sha256 "a610f0bd5cd27b6cc2fd1c91cc0f6460337cdc3c1f9e458f3d8ec8bb43f417ba"
     end
   end
 
