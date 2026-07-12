@@ -7,22 +7,20 @@ class Jmax < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "c0ffe84354ee849c76c281f022d9af8e1ff581f25ca4590b78c766077348a14e"
+      sha256 "6ea406c106d96b67f6dec61ed2f73239aab9444e55086c48688f3c3b7cd0298f"
     else
       url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "72261c9e0dbd71c99c12cd1cc36ce00416da3fc5437f3d34a9d08c84f525cf36"
+      sha256 "def016a11e95b519f9acc9753b21cdde9ea0e7b5744485647dca2e4ecdd89b03"
     end
   end
 
   on_linux do
-    # v0.1.5 is a macOS-only interim (the unknown-function fix); Linux stays on
-    # v0.1.4 until its binaries publish, then these move back to v#{version}.
     if Hardware::CPU.arm?
-      url "https://github.com/openIE-dev/jmax/releases/download/v0.1.4/jmax-0.1.4-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "1e46395360917a1d37d1ecdc06f333ff449d49a6dcc56fa31b90e9792eaac80e"
+      url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ced5e5f081502a10f8556e4492f67b72fe68b650f0f8486c9ed20baa9b035662"
     else
-      url "https://github.com/openIE-dev/jmax/releases/download/v0.1.4/jmax-0.1.4-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a610f0bd5cd27b6cc2fd1c91cc0f6460337cdc3c1f9e458f3d8ec8bb43f417ba"
+      url "https://github.com/openIE-dev/jmax/releases/download/v#{version}/jmax-#{version}-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "47c16c74a82a65dc1af00299fbd35559718d1e00874c53f2874f8d7dfacf23cb"
     end
   end
 
@@ -31,6 +29,6 @@ class Jmax < Formula
   end
 
   test do
-    assert_match "jmax", shell_output("#{bin}/jmax --version")
+    assert_match "jmax #{version}", shell_output("#{bin}/jmax --version")
   end
 end
